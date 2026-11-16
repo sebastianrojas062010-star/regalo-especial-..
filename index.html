@@ -4,76 +4,181 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Un regalo para ti ❤️</title>
+<title>Para Marcela ❤️</title>
+
 <style>
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
+  background: #fff9fb;
+  color: #624b54;
   font-family: Georgia, serif;
-  background: linear-gradient(135deg,#240b19,#702747,#e18a9c);
-  color: white;
   text-align: center;
 }
-main { padding: 35px 20px; max-width: 600px; margin: auto; }
-h1 { font-size: 36px; }
-p { line-height: 1.7; }
-.corazon { font-size: 65px; animation: latido 1.2s infinite; }
+
+main {
+  max-width: 520px;
+  margin: auto;
+  padding: 35px 22px;
+}
+
+.portada {
+  padding: 55px 15px;
+}
+
+.corazon {
+  font-size: 65px;
+  animation: latido 1.5s infinite;
+}
+
 @keyframes latido {
-  50% { transform: scale(1.15); }
+  50% { transform: scale(1.13); }
 }
+
+h1 {
+  color: #d77f9d;
+  font-size: 38px;
+  font-weight: normal;
+}
+
+h2 {
+  color: #d77f9d;
+  font-weight: normal;
+}
+
+p {
+  line-height: 1.8;
+}
+
 .seccion {
-  background: #ffffff18;
-  border: 1px solid #ffffff40;
-  border-radius: 18px;
-  padding: 22px;
-  margin: 22px 0;
+  background: white;
+  border: 1px solid #f6dce5;
+  border-radius: 20px;
+  padding: 25px 18px;
+  margin: 24px 0;
+  box-shadow: 0 5px 18px #e9b9ca30;
 }
+
 button {
-  background: #ffb4c8;
-  color: #50152f;
-  border: 0;
-  padding: 13px 22px;
-  border-radius: 25px;
+  background: #e9a5ba;
+  color: white;
+  border: none;
+  padding: 13px 24px;
+  border-radius: 30px;
   font-size: 16px;
+  cursor: pointer;
 }
-img {
-  width: 100%;
-  border-radius: 15px;
-  margin-top: 12px;
+
+#contador {
+  color: #c66f91;
+  font-size: 20px;
 }
+
+footer {
+  color: #d58aa3;
+  padding: 30px;
+}
+
 </style>
 </head>
+
 <body>
 <main>
-  <div class="corazon">❤️</div>
-  <h1>Para alguien especial</h1>
-  <p>Hoy quiero regalarte algo diferente...</p>
 
-  <div class="seccion">
-    <h2>Un recuerdo especial 📸</h2>
-    <p>Aquí colocaremos nuestras fotografías favoritas.</p>
-  </div>
+<section class="portada">
+  <div class="corazon">♡</div>
+  <p>UN REGALO ESPECIAL PARA</p>
+  <h1>MARCELA</h1>
+  <p>Hay personas que hacen la vida más bonita...</p>
+  <p>Y tú eres una de ellas. ❤️</p>
+</section>
 
-  <div class="seccion">
-    <h2>Nuestro tiempo juntos ⏳</h2>
-    <p id="contador">Un tiempo lleno de recuerdos.</p>
-  </div>
+<section class="seccion">
+  <h2>♡ Nuestra historia ♡</h2>
+  <p>
+    Desde el 9 de junio de 2026 comenzó
+    una historia que quiero seguir escribiendo
+    contigo.
+  </p>
+</section>
 
-  <div class="seccion">
-    <h2>Nuestra canción 🎵</h2>
-    <p>Aquí estará nuestra canción especial.</p>
-  </div>
+<section class="seccion">
+  <h2>⏳ Nuestro tiempo juntos</h2>
+  <p>Desde que comenzó nuestra historia:</p>
+  <div id="contador">Calculando...</div>
+</section>
 
-  <div class="seccion">
-    <h2>Una carta para ti 💌</h2>
-    <p>
-      Quiero que sepas lo especial que eres
-      y lo mucho que significas para mí.
-      Gracias por cada recuerdo y cada momento.
-    </p>
-  </div>
+<section class="seccion">
+  <h2>📸 Nuestros recuerdos</h2>
+  <p>Aquí guardaremos fotografías de nuestros momentos favoritos.</p>
+  <p>Pronto llenaremos este espacio de recuerdos. ♡</p>
+</section>
 
-  <h2>Te quiero ❤️</h2>
+<section class="seccion">
+  <h2>🎵 Nuestra canción</h2>
+  <p>Aquí agregaremos esa canción que nos representa.</p>
+</section>
+
+<section class="seccion">
+  <h2>💌 Una carta para ti</h2>
+  <p>
+    MARCELA:
+    <br><br>
+    Quiero que sepas lo importante que eres
+    para mí. Gracias por formar parte de mi vida,
+    por cada momento y por todos los recuerdos
+    que todavía nos faltan por crear.
+    <br><br>
+    Quiero seguir compartiendo momentos,
+    sonrisas y nuevas aventuras contigo.
+    <br><br>
+    Con mucho cariño:
+    <br>
+    <strong>El amor de tu vida ❤️</strong>
+  </p>
+</section>
+
+<footer>
+  Hecho con amor, para ti. ♡
+</footer>
+
 </main>
+
+<script>
+const inicio = new Date(2026, 5, 9, 0, 0, 0);
+
+function actualizarContador() {
+  const ahora = new Date();
+
+  if (ahora < inicio) {
+    document.getElementById("contador").textContent =
+      "Nuestra historia comienza pronto ❤️";
+    return;
+  }
+
+  let dias = Math.floor(
+    (ahora - inicio) / (1000 * 60 * 60 * 24)
+  );
+
+  let anios = Math.floor(dias / 365.2425);
+  let meses = Math.floor(
+    (dias - anios * 365.2425) / 30.436875
+  );
+  let restantes = Math.floor(
+    dias - anios * 365.2425 - meses * 30.436875
+  );
+
+  document.getElementById("contador").textContent =
+    anios + " años, " + meses + " meses y " +
+    restantes + " días ❤️";
+}
+
+actualizarContador();
+setInterval(actualizarContador, 60000);
+</script>
+
 </body>
 </html>
